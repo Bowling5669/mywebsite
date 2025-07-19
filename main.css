@@ -1,0 +1,138 @@
+    .itim-regular {
+        font-family: "Itim", cursive;
+        font-weight: 400;
+        font-style: normal;
+    }
+h1{
+  text-align: center;
+  font-size: 3.5em;
+  color: #000000;
+  position: relative;
+  animation: bounce 2s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(54, 54, 54, 0.7);
+}
+.site-header {
+  background: linear-gradient(to right, #3be8ff, #bbefff, #3be8ff);
+  padding: 15px 20px;
+  text-align: center;
+  border-bottom: 3px solid #0062ff;  /* ขอบล่าง */
+  box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+}
+
+.site-header h1 {
+  margin: 0;
+  font-family: "Itim", cursive;
+  color: #fff;
+}
+
+.site-header nav a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.site-header nav a:hover {
+  text-decoration: underline;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+    text-shadow: 0 0 10px rgba(47, 47, 47, 0.7);
+  }
+  50% {
+    transform: translateY(-15px);
+    text-shadow: 0 0 20px rgb(41, 41, 41);
+  }
+}
+body{
+    font-family: "Itim", cursive;
+}
+.menu{
+    text-align: center;
+    display: inline-block;  /* ทำให้ขนาดพอดีกับปุ่ม */
+    padding: 15px 30px;
+    border: 2px solid #100027;       /* ขอบสีม่วง */
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(171, 112, 255, 0.3);  /* เงานุ่ม */
+    background-color: #f9f9ff; /* พื้นหลังจาง ๆ */
+    margin-top: 30px;
+    font-family: "Itim", cursive;
+}
+.home{
+    font-family: "Itim", cursive;
+}
+button{
+    padding: 8px 30px;
+    border: none;
+    box-shadow: 0 0 2.5px hsl(173, 100%, 86%), inset 0 0 5px #77e8ff;
+    border-radius: 25px;
+}
+a{
+    font-size: 20px;
+    width: 30px;
+    height: 20px;
+    font-family: "Itim", cursive;
+    text-decoration: none;
+}
+/* ส่วนหลักของหน้า */
+main {
+  padding: 2em;
+  text-align: center;
+  background: linear-gradient(to bottom, #f0fbff, #ffffff); /* โทนฟ้าอ่อนเข้ากับปุ่ม */
+  color: #333;
+}
+
+main h2, main h3 {
+  color: #4a00e0; /* โทนม่วงเข้ากับปุ่ม addons */
+  margin-bottom: 0.5em;
+}
+
+main p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 1.5em;
+}
+
+main ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1em;
+}
+
+main ul li::before {
+  content: "✔ ";
+  color: #3be8ff;
+  font-weight: bold;
+}
+
+/* ปุ่มลิงก์ */
+.btn {
+  width: 100px;
+  height: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #3be8ff, #81eeff, #d6f7ff);
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 12px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ส่วนท้ายของเว็บ */
+footer {
+  background: linear-gradient(to right, #d6f7ff, #ffffff);
+  text-align: center;
+  padding: 1.5em 1em;
+  font-size: 0.95em;
+  color: #555;
+  border-top: 1px solid #ccc;
+  margin-top: 2em;
+}
