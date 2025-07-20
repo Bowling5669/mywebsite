@@ -1,94 +1,504 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<style>
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(50px); }
-  to { opacity: 1; transform: translateY(0); }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Itim&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: rgb(199, 228, 255);
+      font-family: "Itim", cursive, sans-serif;
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Fade in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Header & nav */
+    header.site-header {
+      background: linear-gradient(90deg, #006eff, #4a8fff);
+      padding: 1em 1.5em;
+      color: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .home h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      user-select: none;
+      letter-spacing: 1px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 0;
+    }
+
+    /* Buttons as nav links */
+    .menu button {
+      border: none;
+      border-radius: 8px;
+      padding: 10px 18px;
+      cursor: pointer;
+      transition: filter 0.3s ease;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Gradient backgrounds for each button */
+    .menu button:nth-child(1) {
+      background: linear-gradient(
+        to right,
+        rgb(0, 110, 255),
+        rgb(34, 123, 255)
+      );
+    }
+    .menu button:nth-child(2) {
+      background: linear-gradient(
+        to right,
+        rgb(34, 123, 255),
+        rgb(86, 148, 255)
+      );
+    }
+    .menu button:nth-child(3) {
+      background: linear-gradient(
+        to right,
+        rgb(69, 137, 255),
+        rgb(187, 214, 255)
+      );
+      color: #333;
+    }
+
+    .menu button:hover {
+      filter: brightness(1.15);
+    }
+
+    /* Remove default link styles inside buttons */
+    .menu button a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      user-select: none;
+    }
+    .menu button:nth-child(3) a {
+      color: #222;
+      font-weight: 700;
+    }
+
+    /* Main content */
+    main {
+      max-width: 800px;
+      margin: 2em auto;
+      background: linear-gradient(135deg, #eaf3fe, #95eaff);
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+      padding: 2.5em 2em;
+      animation: fadeIn 1s ease-in-out;
+      text-align: center;
+    }
+
+    main h2 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5em;
+    }
+
+    main p {
+      font-size: 1.15rem;
+      margin: 1em 0 1.5em 0;
+      color: #1a1a1a;
+    }
+
+    main h5 {
+      color: #0366d6;
+      font-weight: 600;
+      margin-top: 1em;
+    }
+
+    section {
+      margin-top: 3em;
+    }
+
+    section h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5em;
+      color: #084a8c;
+    }
+
+    section p a {
+      color: #ff0000;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      margin: 0 0.5em;
+    }
+    section p a[href*="discord"] {
+      color: #7289da;
+    }
+
+    section p a:hover {
+      text-decoration: underline;
+      color: #222;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #f8f8f8;
+      border-top: 1px solid #ccc;
+      padding: 1.5em 1em;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #555;
+      user-select: none;
+    }
+
+    footer p {
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    footer p span {
+      color: rgb(202, 202, 202);
+    }
+
+    footer h5 {
+      margin: 1.5em 0 0.75em 0;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #222;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 1em;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: inherit;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a img {
+      height: 30px;
+      width: auto;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #0a47a1;
+    }
+    .social-links a:hover img {
+      transform: scale(1.1);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Divider between social links */
+    .social-divider {
+      font-size: 24px;
+      color: #aaa;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 10px;
+      }
+
+      .menu button {
+        flex: 1 1 100%;
+        font-size: 1.2rem;
+        padding: 12px 0;
+      }
+
+      main {
+        margin: 1.5em 1em;
+        padding: 2em 1.5em;
+        font-size: 1rem;
+      }
+
+      main h2 {
+        font-size: 1.8rem;
+      }
+
+      section p a {
+        display: inline-block;
+        margin: 0.5em 0.8em;
+        font-size: 1.1rem;
+      }
+
+      footer {
+        font-size: 0.9rem;
+        padding: 1em 1em 2em;
+      }
+
+      .social-links {
+        gap: 15px;
+        flex-direction: column;
+      }
+      .social-links a {
+        font-size: 1.1rem;
+      }
+      .social-links a img {
+        height: 36px;
+      }
+    }
+    /* ซ่อนเมนูมือถือโดยดีฟอลต์ */
+.mobile-menu {
+  display: none;
 }
-</style>
 
-<link rel="stylesheet" href="main.css">
-<body style="background-color: rgb(199, 228, 255);">
-    <header class="site-header">
-        <nav>
-    <div class="home">
-        <h1>About me</h1>
-        <div class="menu">
-            <button style="font-size: 20px; background: linear-gradient(to right, rgb(0, 110, 255), rgb(34, 123, 255));">
-                <a href="index.html">Home</a>
-            </button>
+/* เมนูเดสก์ท็อป: ปุ่มเรียงในแถว */
+.desktop-menu {
+  display: flex;
+  gap: 12px;
+}
 
-            <button style="font-size: 20px; background: linear-gradient(to right, rgb(34, 123, 255), rgb(86, 148, 255));">
-                <a href="addons.html">Addons</a>
-            </button>
+/* ปุ่มเมนูแบบเดิม */
+.desktop-menu button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  cursor: pointer;
+  font-family: 'Itim', cursive;
+  font-weight: 600;
+  font-size: 1.1rem;
+  background: linear-gradient(to right, #006eff, #228bff);
+  color: white;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  transition: filter 0.3s ease;
+}
 
-            <button style="font-size: 20px; background: linear-gradient(to right, rgb(69, 137, 255), rgb(187, 214, 255));">
-                <a href="aboutme.html">About me</a>
-            </button>
-        </div>
+.desktop-menu button:hover {
+  filter: brightness(1.15);
+}
+
+.desktop-menu button a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+/* Dropdown เมนู (มือถือ) */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background: linear-gradient(to right, #006eff, #228bff);
+  color: white;
+  padding: 10px 18px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Itim', cursive;
+  transition: background 0.3s ease;
+  width: 120px;
+  text-align: left;
+}
+
+.dropbtn:hover {
+  background: linear-gradient(to right, #0050cc, #1a6bd9);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f9ff;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  z-index: 1000;
+  margin-top: 5px;
+}
+
+.dropdown-content a {
+  color: #003366;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: 'Itim', cursive;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #cce4ff;
+}
+
+.dropdown.open .dropdown-content {
+  display: block;
+}
+
+/* Media query: ถ้าหน้าจอเล็กกว่า 720px ให้ซ่อนเมนูเดสก์ท็อป และแสดง dropdown แทน */
+@media (max-width: 720px) {
+  .desktop-menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+<nav>
+  <div class="home">
+    <h1>About me</h1>
+
+    <!-- เมนูแบบปุ่มเรียงบนคอม -->
+    <div class="menu desktop-menu">
+      <button><a href="index.html">Home</a></button>
+      <button><a href="addons.html">Addons</a></button>
+      <button><a href="aboutme.html">About me</a></button>
     </div>
-    </nav>
-   <main style="
-  text-align: center;
-  padding: 2em;
-  margin: 2em;
-  background: linear-gradient(135deg, #eaf3fe, #95eaff);
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  animation: fadeIn 1s ease-in-out;
-">
-  <h2>👤 เกี่ยวกับฉัน</h2>
-  <p>สวัสดีครับ ผม Bowling หรือจะเรียกสั้นๆว่า B ก็ได้ครับ ผมทำแอดออนแบบของพี่แท็ค ซึ่งของพี่เขาเป็นปลั๊กอิน ส่วนของผมทำออกมาเป็นแอดออนซึ่งต่างจากปลั๊กอินซึ่งข้อจำกัดนั้นมากกว่าปลั๊กอิน</p>
-  <h5>สามารถสนับสนุนผมได้ด้วยการซื้อแอดออนของผมนะครับ 😊</h5>
 
-  <section style="margin-top: 3em;">
-    <h3>ติดต่อฉันได้ที่</h3>
-    <p>
-      <a href="https://www.youtube.com/@Addon_B" target="_blank" style="color: #ff0000; text-decoration: none; font-weight: bold;">YouTube</a> |
-      <a href="https://discord.gg/ythKwzsz" target="_blank" style="color: #7289da; text-decoration: none; font-weight: bold;">Discord</a>
-    </p>
-  </section>
-</main>
-
-<footer style="text-align: center; margin-top: 4em; padding: 1em; background-color: #f8f8f8; border-top: 1px solid #ccc;">
-<p>
-  ขอบคุณที่ติดตามผลงานผมครับ | พวก เก
-  <span style="color: rgb(202, 202, 202);">มส์เมอร์</span>
-</p>
-
-<div style="text-align: center; margin-top: 2em;">
- <div style="text-align: center; margin-top: 2em;">
-  <h5>ติดตามผม & พูดคุยกันได้ที่ :</h5>
-
-  <div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-    <!-- YouTube -->
-    <a href="https://www.youtube.com/@Addon_B" target="_blank" title="YouTube" style="display: flex; align-items: center; gap: 5px; text-decoration: none; color: inherit;">
-      <img src="https://e7.pngegg.com/pngimages/208/269/png-clipart-youtube-play-button-computer-icons-youtube-youtube-logo-angle-rectangle-thumbnail.png" alt="YouTube" style="height: 30px;">
-      <span></span>
-    </a>
-
-    <!-- Divider -->
-    <span style="font-size: 18px; color: #aaa;">|</span>
-
-    <!-- Discord -->
-    <a href="https://discord.gg/ythKwzsz" target="_blank" title="Discord" style="display: flex; align-items: center; gap: 5px; text-decoration: none; color: inherit;">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWg9e-8mwVEtPKLeWnOuVop9YoMHsMOI-EmA&s" alt="Discord" style="height: 30px;">
-      <span style="font-size: 10px;">สังคมเกๆ</span>
-    </a>
+    <!-- เมนูแบบ dropdown บนมือถือ -->
+    <div class="menu mobile-menu">
+      <div class="dropdown">
+        <button class="dropbtn">เมนู ▾</button>
+        <div class="dropdown-content">
+          <a href="index.html">Home</a>
+          <a href="addons.html">Addons</a>
+          <a href="aboutme.html">About me</a>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</nav>
 
+  </header>
 
+  <main>
+    <h2>👤 เกี่ยวกับฉัน</h2>
+    <p>
+      สวัสดีครับ ผม Bowling หรือจะเรียกสั้นๆว่า B ก็ได้ครับ ผมทำแอดออนแบบของพี่แท็ค
+      ซึ่งของพี่เขาเป็นปลั๊กอิน ส่วนของผมทำออกมาเป็นแอดออนซึ่งต่างจากปลั๊กอิน
+      ซึ่งข้อจำกัดนั้นมากกว่าปลั๊กอิน
+    </p>
+    <h5>สามารถสนับสนุนผมได้ด้วยการซื้อแอดออนของผมนะครับ 😊</h5>
 
-</footer>
+    <section>
+      <h3>ติดต่อฉันได้ที่</h3>
+      <p>
+        <a href="https://www.youtube.com/@Addon_B" target="_blank" rel="noopener noreferrer"
+          >YouTube</a
+        >
+        |
+        <a href="https://discord.gg/ythKwzsz" target="_blank" rel="noopener noreferrer"
+          >Discord</a
+        >
+      </p>
+    </section>
+  </main>
 
+  <footer>
+    <p>
+      ขอบคุณที่ติดตามผลงานผมครับ | พวก
+      <span>เก</span
+      ><span style="color: rgb(202, 202, 202)">มส์เมอร์</span>
+    </p>
+
+    <h5>ติดตามผม &amp; พูดคุยกันได้ที่ :</h5>
+
+    <div class="social-links" aria-label="Social media links">
+      <a
+        href="https://www.youtube.com/@Addon_B"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="YouTube"
+      >
+        <img
+          src="https://e7.pngegg.com/pngimages/208/269/png-clipart-youtube-play-button-computer-icons-youtube-youtube-logo-angle-rectangle-thumbnail.png"
+          alt="YouTube logo"
+        />
+        YouTube
+      </a>
+
+      <span class="social-divider" aria-hidden="true">|</span>
+
+      <a
+        href="https://discord.gg/ythKwzsz"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Discord"
+      >
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWg9e-8mwVEtPKLeWnOuVop9YoMHsMOI-EmA&s"
+          alt="Discord logo"
+        />
+        สังคมเกๆ
+      </a>
+    </div>
+  </footer>
 </body>
+<script src="aboutme.js"></script>
 </html>
