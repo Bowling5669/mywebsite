@@ -1,0 +1,215 @@
+        .itim-regular {
+            font-family: "Itim", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        * {
+            font-family: "Itim", cursive;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+.header {
+    background: linear-gradient(
+        90deg,
+        #fff600,
+        #ff7b00,
+        #ff0000,
+        #ff0000,
+        #ff7b00,
+        #fff600
+    );
+    text-align: center;
+    padding: 1px 0;        /* ลด padding ลง */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);  /* ลดเงาลง */
+    border-radius: 0 0 25px 25px; /* ลดมุมโค้งลง */
+    user-select: none;
+}
+
+.header h1 {
+    font-size: 2rem;        /* ลดขนาด font ลง */
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.35);
+    margin-bottom: 18px;    /* ลด margin */
+    font-weight: 800;
+}
+
+.navBtn {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;             /* ลดช่องว่าง */
+    padding-bottom: 12px;  /* ลด padding */
+}
+
+.navBtn button {
+    border-radius: 20px;    /* ลดความโค้ง */
+    background: linear-gradient(
+        135deg,
+        #3f7de1,
+        #0cb0ff,
+        #86d7ff
+    );
+    width: 130px;           /* ลดขนาดปุ่มลง */
+    height: 36px;
+    margin: 8px 5px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: "Itim", cursive;
+    font-size: 1rem;        /* ลดขนาด font */
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(12, 176, 255, 0.35);
+    user-select: none;
+}
+
+.navBtn button:hover {
+    background: linear-gradient(
+        135deg,
+        #2a5ab2,
+        #06a1f7,
+        #64d0ff
+    );
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 15px rgba(6, 162, 255, 0.6);
+}
+
+
+
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .addon {
+            background: linear-gradient(to right, rgb(102, 143, 255), rgb(0, 100, 255));
+            margin: 20px 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .addon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+        }
+
+        .addon h4 {
+            background: rgba(0,0,0,0.2);
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.4rem;
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .content {
+            background: linear-gradient(to right, rgb(102, 212, 255), rgb(0, 180, 255));
+            padding: 20px;
+            color: white;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .content button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-family: "Itim", cursive;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .content button:hover {
+            background: linear-gradient(45deg, #ee5a24, #c44569);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .content button:active {
+            transform: translateY(0);
+        }
+
+        /* Minecraft-themed decorations */
+        .addon::before {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .addon {
+            position: relative;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .navBtn button {
+                width: 100px;
+                height: 20px;
+                font-size: 0.9rem;
+                margin: 5px;
+            }
+
+            main {
+                padding: 20px 15px;
+            }
+
+            .addon h4 {
+                font-size: 1.2rem;
+                padding: 12px 15px;
+            }
+
+            .content {
+                padding: 15px;
+            }
+        }
+
+        /* Loading animation for addons */
+        .addon {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .addon:nth-child(1) { animation-delay: 0.1s; }
+        .addon:nth-child(2) { animation-delay: 0.2s; }
+        .addon:nth-child(3) { animation-delay: 0.3s; }
+        .addon:nth-child(4) { animation-delay: 0.4s; }
+        .addon:nth-child(5) { animation-delay: 0.5s; }
+        .addon:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }

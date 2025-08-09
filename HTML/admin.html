@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin</title>
+  <style>
+    body {
+      margin:0; 
+      height:100vh; 
+      display:flex; 
+      justify-content:center; 
+      align-items:center; 
+      font-family: 'Itim', cursive, sans-serif;
+      background: #f0f0f5;
+      flex-direction: column;
+    }
+    #content {
+      display: none;
+      text-align: center;
+    }
+    button {
+      width: 900px;
+      height: 200px;
+      text-align: center;
+      font-size: 24px;
+      cursor: pointer;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+      font-weight: 700;
+      box-shadow: 0 8px 15px rgba(101, 37, 255, 0.6);
+      border: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+button:hover {
+  background: linear-gradient(135deg, #4e0ab6 0%, #1b55e1 100%);
+  transform: translateX(30px) scale(-1.2);
+    transform: translateY(10px) scale(-1.2);
+  transition: transform 0.2s ease;
+  box-shadow: 0 8px 15px rgba(12, 45, 100, 0.6);
+}
+    a {
+      display: block;
+      margin-top: 20px;
+      font-size: 20px;
+      text-decoration: none;
+      color: #2575fc;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<div id="content">
+  <button 
+    onclick="window.open('https://youtu.be/dQw4w9WgXcQ', '_blank')"
+  >
+    คลิกที่นี่เพื่อจัดการข้อมูล
+  </button>
+  <a href="/index.html">กลับ</a>
+</div>
+
+<script>
+  window.onload = function() {
+    let answer = prompt("1 + 1 = ??");
+    if(answer === "11") {
+      document.getElementById('content').style.display = "block";
+      alert("🎉ถูกแสนรู้มาก...");
+    } else {
+      alert("😈ผิด!!!! ...😈");
+      window.location.href = "/index.html";
+    }
+  };
+</script>
+
+</body>
+</html>
